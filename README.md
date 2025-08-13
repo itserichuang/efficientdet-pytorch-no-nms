@@ -12,7 +12,9 @@ Aside from the default model configs, there is a lot of flexibility to facilitat
 * BiFPN connections and combination mode are fully configurable and not baked into the model code
 * BiFPN and head modules can be switched between depthwise separable or standard convolutions
 * Activations, batch norm layers are switchable via arguments (soon config)
-* Any backbone in my `timm` model collection that supports feature extraction (`features_only` arg) can be used as a bacbkone.
+* Any backbone in my `timm` model collection that supports feature extraction (`features_only` arg) can be used as a backbone.
+
+**The only difference between this version and the original version by rwightman is that nms/soft_nms is always turned off to allow custom selection of ensemble boxes algorithm downstream.**
 
 ## Updates
 
