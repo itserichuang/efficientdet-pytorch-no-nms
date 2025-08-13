@@ -142,7 +142,7 @@ class DetBenchTrain(nn.Module):
         self.num_classes = model.config.num_classes
         self.anchors = Anchors.from_config(model.config)
         self.max_detection_points = model.config.max_detection_points
-        self.max_det_per_image = 10000#model.config.max_det_per_image
+        self.max_det_per_image = 5000#model.config.max_det_per_image
         self.soft_nms = model.config.soft_nms
         self.anchor_labeler = None
         if create_labeler:

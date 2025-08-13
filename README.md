@@ -1,6 +1,6 @@
 # EfficientDet (PyTorch)
 
-### **Note: The only difference between this version and the original version by rwightman is that nms/soft_nms is always turned off and the max number of detections for DetBenchTrain is always set to 10000 to allow custom selection of ensemble boxes algorithm downstream.**
+### **Note: The only difference between this version and the original version by rwightman is that nms/soft_nms is always turned off and the max number of detections for DetBenchTrain is always set to 5000 to allow custom selection of ensemble boxes algorithm downstream.**
 
 A PyTorch implementation of EfficientDet.
 
