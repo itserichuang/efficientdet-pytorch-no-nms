@@ -132,12 +132,12 @@ def generate_detections(
         boxes = clip_boxes_xyxy(boxes, img_size / img_scale)  # clip before NMS better?
 
     scores = cls_outputs.sigmoid().squeeze(1).float()
-    if soft_nms:
-        top_detection_idx, soft_scores = batched_soft_nms(
-            boxes, scores, classes, method_gaussian=True, iou_threshold=0.3, score_threshold=.001)
-        scores[top_detection_idx] = soft_scores
-    else:
-        top_detection_idx = batched_nms(boxes, scores, classes, iou_threshold=0.5)
+    # if soft_nms:
+    #     top_detection_idx, soft_scores = batched_soft_nms(
+    #         boxes, scores, classes, method_gaussian=True, iou_threshold=0.3, score_threshold=.001)
+    #     scores[top_detection_idx] = soft_scores
+    # else:
+    top_detection_idx = batched_nms(boxes, scores, classes, iou_threshold=1.0)
 
     # keep only top max_det_per_image scoring predictions
     top_detection_idx = top_detection_idx[:max_det_per_image]
